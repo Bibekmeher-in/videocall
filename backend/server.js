@@ -56,6 +56,25 @@ app.use(express.urlencoded({ extended: true }));
 // Static files for uploads
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
+// Welcome route
+app.get('/', (req, res) => {
+    res.json({
+        message: 'Welcome to Communication App Backend',
+        status: 'running',
+        version: '1.0.0',
+        timestamp: new Date().toISOString(),
+        endpoints: {
+            health: '/api/health',
+            auth: '/api/auth',
+            messages: '/api/messages',
+            groups: '/api/groups',
+            stories: '/api/stories',
+            calls: '/api/calls',
+            upload: '/api/upload'
+        }
+    });
+});
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);

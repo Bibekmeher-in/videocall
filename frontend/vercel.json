@@ -2,14 +2,6 @@
     "buildCommand": "npm run build",
     "devCommand": "npm run dev",
     "installCommand": "npm install",
-    "env": {
-        "VITE_API_URL": {
-            "description": "Backend API URL"
-        },
-        "VITE_SOCKET_URL": {
-            "description": "Backend Socket.IO URL"
-        }
-    },
     "rewrites": [
         {
             "source": "/(.*)",
